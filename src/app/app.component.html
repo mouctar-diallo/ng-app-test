@@ -1,0 +1,35 @@
+<div class="page">
+<app-navbar></app-navbar>
+
+    <div class="row mt-5">
+      <div *ngFor="let card of cards; index as i" class="col-xxl-2 col-xl-4 col-lg-4 col-md-6 col-sm-12 col-xs-12 col-2">
+        <div class="col card-size">
+          <div class="d-flex justify-content-between mt-3">
+            <div class="label mt-1">{{card.name}}</div>
+            <div class="number">{{card.numb}}</div>
+          </div>
+          <div class="card-color" [style.background-color]="card.color"></div>
+          <div class="card-sub-color"></div>
+          <div class="card-body">
+            <div class="card-content flex"
+                 [style.background]="applyColorByPercent(startGradient, endGradient, card.percent, 0)">
+              <div class="inline"></div>
+              <div class="inline"></div>
+              <div class="inline"></div>
+            </div>
+          </div>
+          <div class="card-sub-color"></div>
+          <div class="mt-2">
+            <div class="level">
+              <p> {{card.percent}}% </p>
+            </div>
+            <div class="describe-card">
+              <span> {{card.sentence}} № {{ i+1 }} </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <app-footer></app-footer>
+  </div>

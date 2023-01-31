@@ -1,0 +1,45 @@
+.square {
+    width: 23px;
+    height: 23px;
+    border-radius: 3px;
+    margin: 15px;
+}
+
+.red-square {
+    background: red;
+}
+
+.green-square {
+    background: #04978D;
+}
+
+.text {
+    margin: 15px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    color: #FFFFFF;
+}
+
+.right-align {
+    float: right;
+    display: flex;
+    align-items: center;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer {
+   margin-bottom: 0;
+    height: 54px;
+    background: #272A38;
+    opacity: 1;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
