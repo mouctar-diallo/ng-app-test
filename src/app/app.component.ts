@@ -16,8 +16,6 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.cards = this.cardService.getCards();
-    console.log(this.cards);
-    
   }
 
   applyColorByPercent(startColor: string, endColor: string, startPercent: number, endPercent: number) {
