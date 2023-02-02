@@ -1,27 +1,24 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { CardService } from './services/card.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
 
-  startGradient ="#0089FF"
-  endGradient ="#232532"
+  startGradient ="#0089FF";
+  endGradient ="#232532";
+  cards: any[] = [];
 
-  cards = [
-    {name: "Macca",numb: "180",percent: 18,sentence: "в резервуаре",color: "#EB5757"},
-    {name: "Macca",numb: "750",percent: 75,sentence: "в резервуаре",color: "#00A99D"},
-    {name: "Macca",numb: "680",percent: 68,sentence: "в резервуаре",color: "#00A99D"},
-    {name: "Macca",numb: "980",percent: 98,sentence: "в резервуаре",color: "#EB5757"},
-    {name: "Macca",numb: "680",percent: 68,sentence: "в резервуаре",color: "#00A99D"},
-    {name: "Macca",numb: "180",percent: 18,sentence: "в резервуаре",color: "#EB5757"},
-    {name: "Macca",numb: "750",percent: 75,sentence: "в резервуаре",color: "#00A99D"},
-    {name: "Macca",numb: "750",percent: 75,sentence: "в резервуаре",color: "#00A99D"},
-    {name: "Macca",numb: "980",percent: 98,sentence: "в резервуаре",color: "#EB5757"},
-    {name: "Macca",numb: "180",percent: 18,sentence: "в резервуаре",color: "#EB5757"},
-  ];
+  constructor(public cardService: CardService) {}
+
+  ngOnInit() {
+    this.cards = this.cardService.getCards();
+    console.log(this.cards);
+    
+  }
 
   applyColorByPercent(startColor: string, endColor: string, startPercent: number, endPercent: number) {
     return `linear-gradient(to top, ${startColor} ${startPercent}%, ${endColor} ${endPercent}%)`;
